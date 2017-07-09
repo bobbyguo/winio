@@ -28,7 +28,7 @@ public class User32Util {
 		do {
 			Pointer p = new Memory(8);
 			if (!WinIo.INSTANCE.GetPortVal(WinIo.CONTROL_PORT, p, 1)) {
-				System.err.println("Cannot get the Port");
+				throw new RuntimeException("Cannot get the Port");
 			}
 
 			val = p.getInt(0);
